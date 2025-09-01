@@ -105,7 +105,7 @@ def load_site_addresses():
     if not text:
         text = """85 avenue clément ader 34170 castelnau-le-lez
 335 chemin bas du mas de boudan Nîmes
-10 rue roger broussoux 30170 saint hyppolyte du fort
+10 rue roger broussoux 30170 saint hippolyte du fort
 74 rue de candiac 30600 vauvert
 1026 route de Nimes 30700 uzes
 27 rue des muriers 07150 vallon pont d'arc
@@ -113,7 +113,10 @@ def load_site_addresses():
 5 rue deleuze 04200 sisteron
 5 allee jean perrin 13270 fos sur mer
 116 rue marc seguin 07503 guilherand granges
-chemin des alpilles 04000 dignes les bains
+avenue du foulon 04240 Annot
+chemin des alpilles 04000 digne les bains
+4 rue du chêne vert 30133 les angles
+20 chemin de gery 26200 Montélimar
 45 rue merlot 34130 Mauguio
 95 avenue des logissons 13770 venelles
 7 allee de la passe pierre 13800 istres
@@ -247,7 +250,7 @@ def apply_sidebar_filters(df, cmap):
             filters_selected['nom_contains'] = q
 
     if st.sidebar.button("🔄 Réinitialiser les filtres"):
-        st.experimental_rerun()
+        st.rerun()
 
     return df, filters_selected
 
@@ -736,7 +739,7 @@ def main():
             st.cache_data.clear()
             st.cache_resource.clear()
             st.success("Cache vidé.")
-            st.experimental_rerun()
+            st.rerun()
 
     if not uploaded:
         st.info("Importez un fichier Excel pour démarrer.")
